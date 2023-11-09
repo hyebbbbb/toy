@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head th:replace="common/head">
+</head>
+
+<body>
+
+    <div th:replace="common/header">
+    </div>
+
+    <nav th:replace="common/nav">
+    </nav>
+
+    <div class="container mt-5">
+        
+            <div class="card">
+              <div class="card-body">
+                <span class="badge bg-primary rounded-pill" th:text="${diary.id} + '번'"></span>
+                <h5 class="card-title" th:text="${diary.title}"></h5>
+                <p class="card-text" th:text="${diary.content}"></p>
+              </div>
+            </div>
+          
+        
+    </div>
+
+    <div th:replace="common/footer">
+    </div>
+
+</body>
+
+</html>
+

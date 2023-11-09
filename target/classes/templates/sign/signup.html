@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head th:replace="common/head">
+</head>
+
+<body>
+
+    <div th:replace="common/header">
+    </div>
+
+    <nav th:replace="common/nav">
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <form method="post" action="/signup">
+                <div class="mb-3 input-group flex-nowrap">
+                    <!-- <label for="email">Email:</label> -->
+                    <span class="input-group-text">💻</span>
+                    <input type="text" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3 input-group flex-nowrap">
+                    <!-- <label for="pwd">Password:</label> -->
+                    <span class="input-group-text">🔐</span>
+                    <input type="password" class="form-control" id="pwd" name="pwd">
+                </div>
+                <div class="mb-3 input-group flex-nowrap">
+                    <!-- <label for="name">Name:</label> -->
+                    <span class="input-group-text">👤</span>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="d-grid gap-2">
+                    <button class="btn btn-primary" id="signup">Sign Up</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div th:replace="common/footer">
+    </div>
+
+</body>
+
+</html>

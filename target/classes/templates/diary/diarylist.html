@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head th:replace="common/head">
+</head>
+
+<body>
+
+    <div th:replace="common/header">
+    </div>
+
+    <nav th:replace="common/nav">
+    </nav>
+
+    <div class="container mt-5">
+        <h1>일기장</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="diary : ${diaryList}">
+                    <td th:text="${diary.title}"></td>
+                    <td th:text="${diary.content}"></td>
+                    <td th:text="${#dates.format(diary.creDate, 'yyyy-MM-dd HH:mm')}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div th:replace="common/footer">
+    </div>
+
+</body>
+
+</html>
