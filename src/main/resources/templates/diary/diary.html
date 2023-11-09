@@ -4,6 +4,18 @@
 <head th:replace="common/head">
 </head>
 
+<style>
+    /* 해당 textarea 요소에 스타일을 적용하기 위해 아이디나 클래스를 추가할 수 있습니다. */
+    #content {
+        width: 100%;
+        /* 가로 너비를 100%로 설정하여 부모 요소의 너비에 맞게 확장됩니다. */
+        height: 300px;
+        /* 원하는 높이로 조절합니다. */
+        resize: vertical;
+        /* 사용자가 높이 조절만 가능하도록 설정합니다. horizontal로 변경하면 가로 너비 조절도 가능합니다. */
+    }
+</style>
+
 <body>
 
     <div th:replace="common/header">
@@ -13,18 +25,31 @@
     </nav>
 
     <div class="container mt-5">
-        
+
         <div class="row">
             <h1>일기장</h1>
             <form method="post" action="/diary">
-            <div class="mb-3 input-group flex-nowrap">
-                <input type="text" class="form-control" id="title" name="title" placeholder="제목">
-            </div>
-            <div>
-                <textarea type="text" class="form-control" id="content" name="content" placeholder="내용"></textarea>
-            </div>
-            <button class="btn btn-primary">글쓰기</button>
-            <button class="btn btn-primary">삭제</button>
+                <div class="mb-3 input-group flex-nowrap">
+                    <input type="date" class="form-control" id="date" name="date">
+                </div>
+                <div class="mb-3 input-group flex-nowrap">
+                    <input type="text" class="form-control" id="title" name="title" placeholder="제목">
+                </div>
+                <div class="mb-3 input-group flex-nowrap">
+                    <select class="form-select" id="weather" name="weather">
+                        <option value="오늘 날씨">오늘 날씨</option>
+                        <option value="맑음">맑음</option>
+                        <option value="흐림">흐림</option>
+                        <option value="비">비</option>
+                        <option value="눈">눈</option>
+                    </select>
+                </div>
+                <div>
+                    <textarea type="text" class="form-control" id="content" name="content" placeholder="내용"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                    <button class="btn btn-primary">글쓰기</button>
+                </div>
             </form>
         </div>
     </div>

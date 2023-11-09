@@ -7,8 +7,18 @@
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/signin}">로그인</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" th:href="@{/diary}">일기장</a>
+            <li class="nav-item dropdown"> <!-- 드롭다운 메뉴를 가지는 리스트 아이템으로 변경합니다. -->
+                <a class="nav-link dropdown-toggle" href="#" id="diaryDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    일기장
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="diaryDropdown"> <!-- 드롭다운 메뉴 내용을 정의합니다. -->
+                    <li>
+                        <a class="dropdown-item" th:href="@{/diarylist}">일기장 목록</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" th:href="@{/diary}">일기장 쓰기</a>
+                    </li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" th:href="@{/}">Home</a>
