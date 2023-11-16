@@ -23,7 +23,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr th:each="diary : ${diaryList}">
+                <!-- <tr th:each="diary : ${diaryList}">
+                    <td th:text="${diary.id}"></td>
+                    <td>
+                        <a th:href="@{/diaryview/{id}(id=${diary.id})}" th:text="${diary.title}"></a>
+                    </td>
+                    <td th:text="${#dates.format(diary.creDate, 'yyyy-MM-dd HH:mm')}"></td>
+                </tr> -->
+                <tr th:each="diary : ${diaryList}" th:onclick="'window.location = \'/diaryview/' + ${diary.id} + '\''">
                     <td th:text="${diary.id}"></td>
                     <td th:text="${diary.title}"></td>
                     <td th:text="${#dates.format(diary.creDate, 'yyyy-MM-dd HH:mm')}"></td>
@@ -31,10 +38,17 @@
             </tbody>
         </table>
     </div>
-
+    
     <div th:replace="common/footer">
     </div>
 
 </body>
+
+<!-- <script>
+    function goToDiaryView(diaryId) {
+    window.location.href = '/diaryview/' + diaryId;
+}
+
+</script> -->
 
 </html>
